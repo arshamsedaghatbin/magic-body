@@ -42,7 +42,9 @@
     "jwtSecretKey": "OGQ0N2E4YmQwOWNlOGQzOTE2NTYwOTRiN2FiNzIzZTE3MzNmZmRlMWRjYTQzOTk0OTBmYjhhNGQyZTg2MmQzZTdkNGE3NzlmYTFiMDI5MWQ0YTJhNDdiOGFkMWVmYTdjODg5ZWUzOWQ1YjQzMTk3M2I5NGVjZmViZWFjNjk5ZTg=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Category", "SubCategory", "Action", "BookMarkAction", "Practice", "PracticeSession"],
+    "lastLiquibaseTimestamp": 1622112421000
   },
   "git-provider": "GitHub",
   "git-company": "arshamsedaghatbin",
