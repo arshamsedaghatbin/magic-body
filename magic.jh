@@ -1,0 +1,75 @@
+
+entity Category {
+	 title String,
+     photoUrl  String,
+     photo AnyBlob,
+     voiceUrl String,
+     voiceFile AnyBlob,
+     description String,
+     advice String
+}
+
+entity SubCategory {
+	 title String,
+     photoUrl  String,
+     photo AnyBlob,
+     voiceUrl String,
+     voiceFile AnyBlob,
+     masterDescription String,
+     masterAdvice String
+}
+
+entity Action {
+     title String,
+     photoUrl  String,
+     photo AnyBlob,
+	 code String unique,
+     video AnyBlob,
+     videoUrl String,
+     masterDescription String,
+}
+
+entity BookMarkAction{
+    userDescription String
+}
+
+
+
+entity Practice{
+     title String,
+     photoUrl  String,
+     photo AnyBlob,
+     voiceUrl String,
+     voiceFile AnyBlob,
+     masterDescription String,
+     masterAdvice String
+}
+entity PracticeSession{
+       tiltle String
+}
+
+relationship OneToOne{
+			 BookMarkAction{action} to Action{action}
+}
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Category{subcategory} to SubCategory{category},
+    Category{action} to Action{category},
+    PracticeSession{action} to Action{session}
+    Practice {session} to PracticeSession{practice}
+   
+}
+
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
